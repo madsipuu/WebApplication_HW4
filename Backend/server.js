@@ -20,6 +20,11 @@ app.use(express.json());
 // The await keyword makes the function pause the execution and wait for a resolved promise before it continues
 // Syntax:  "async(req, res) => {let value = await promise}"
 
+app.use((req, res, next) => {
+    console.log(' ');
+    console.log('a new request was made to the server');
+    next();
+});
 
 // Post request
 app.post('/api/posts', async(req, res) => {
@@ -43,7 +48,7 @@ app.post('/api/posts', async(req, res) => {
 // Get all posts
 app.get('/api/posts', async(req, res) => {
     try {
-        console.log("get posts request has arrived");
+        console.log("get all posts request has arrived");
         const posts = await pool.query(
             "SELECT * FROM posttable"
         );
@@ -58,7 +63,7 @@ app.get('/api/posts', async(req, res) => {
 // Select specific post
 app.get('/api/posts/:id', async(req, res) => {
     try {
-        console.log("get a post with route parameter  request has arrived");
+        console.log("get a post with route parameter request has arrived");
         // The req.params property is an object containing properties mapped to the named route "parameters". 
         // For example, if you have the route /posts/:id, then the "id" property is available as req.params.id.
         const { id } = req.params; // assigning all route "parameters" to the id "object"
