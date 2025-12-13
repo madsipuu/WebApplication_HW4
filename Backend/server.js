@@ -20,8 +20,8 @@ app.use(express.json());
 // The await keyword makes the function pause the execution and wait for a resolved promise before it continues
 // Syntax:  "async(req, res) => {let value = await promise}"
 
-/* 
-// Task 1
+
+// Post request
 app.post('/api/posts', async(req, res) => {
     try {
         console.log("a post request has arrived");
@@ -37,10 +37,10 @@ app.post('/api/posts', async(req, res) => {
         console.error(err.message);
     }
 }); 
-*/
 
-/* 
-// Task 2
+
+
+// Get all posts
 app.get('/api/posts', async(req, res) => {
     try {
         console.log("get posts request has arrived");
@@ -52,10 +52,10 @@ app.get('/api/posts', async(req, res) => {
         console.error(err.message);
     }
 });
- */
 
-/* 
-// Task 3
+
+ 
+// Select specific post
 app.get('/api/posts/:id', async(req, res) => {
     try {
         console.log("get a post with route parameter  request has arrived");
@@ -73,10 +73,10 @@ app.get('/api/posts/:id', async(req, res) => {
         console.error(err.message);
     }
 }); 
-*/
 
-/* 
-// Task 4
+
+ 
+// Update specific post
 app.put('/api/posts/:id', async(req, res) => {
     try {
         const { id } = req.params;
@@ -90,10 +90,10 @@ app.put('/api/posts/:id', async(req, res) => {
         console.error(err.message);
     }
 });
- */
+ 
 
-/* 
-// Task 5
+ 
+// Delete specific post
 app.delete('/api/posts/:id', async(req, res) => {
     try {
         const { id } = req.params;
@@ -107,7 +107,7 @@ app.delete('/api/posts/:id', async(req, res) => {
         console.error(err.message);
     }
 }); 
-*/
+
 
 app.listen(port, () => {
     console.log("Server is listening to port " + port)
