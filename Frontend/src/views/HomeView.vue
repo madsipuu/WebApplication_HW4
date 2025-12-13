@@ -18,6 +18,8 @@
         </ul>
     </div>
     </div>
+    <button v-if = "authResult" @click="goToAddPost" class="center">Add Post</button>
+    <button v-if = "authResult" @click="deleteAllPosts" class="center">Delete all</button>
   </div>
 </template>
 
@@ -60,7 +62,26 @@ export default {
         .then((response) => response.json())
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
-    }
+    },
+    goToAddPost() {
+    // navigate to AddPost page
+    this.$router.push("/add-post");
+    },
+
+    deleteAllPosts() {
+        // call backend API to delete all posts
+        fetch("http://localhost:3000/api/posts", {
+        method: "DELETE",
+        credentials: "include",
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log("All posts deleted:", data);
+            // refresh the post list
+            this.fetchPosts();
+        })
+        .catch((err) => console.log(err.message));
+    },
   }, 
   mounted() {
         // call fetchPosts() when this element (AllPosts) mounts 

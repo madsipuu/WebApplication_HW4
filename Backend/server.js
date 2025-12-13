@@ -123,6 +123,18 @@ app.delete('/api/posts/:id', async(req, res) => {
     }
 }); 
 
+// Delete all posts
+app.delete('/api/posts', async (req, res) => {
+  try {
+    console.log("delete all posts request has arrived");
+    const deleteAll = await pool.query("DELETE FROM posttable"); // deletes all rows
+    res.json({ message: "All posts deleted", deletedCount: deleteAll.rowCount });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 
 //User AUTHENTICATION
