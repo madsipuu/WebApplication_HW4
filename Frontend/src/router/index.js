@@ -3,6 +3,8 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from "../views/HomeView.vue";
 import SignUp from "../views/SignUp.vue";
 import LogIn from "../views/LogIn.vue";
+import APost from "../views/APost.vue";
+import AddPost from "../views/AddPost.vue";
 import auth from "../auth";
 
 
@@ -39,6 +41,16 @@ const routes = [{
         // which is lazy-loaded when the route is visited.
         component: () =>
             import ( /* webpackChunkName: "about" */ "../views/ContactUs.vue"),
+    },
+    {
+        path: "/post/:id",
+        name: "APost",
+        component: APost,
+    },
+    {
+        path: "/add-post",
+        name: "AddPost",
+        component: AddPost,
     },
 ];
 
