@@ -1,8 +1,10 @@
 <template>
   <div>
     <nav>
-      <router-link to="/api/allposts">Posts</router-link> |
-      <router-link to="/api/addpost">Add a Post</router-link>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/signup">SignUp</router-link> | 
+      <router-link to="/login">LogIn</router-link> | 
+    <router-link to="/about">About</router-link>
     </nav>
     <router-view />
   </div>
