@@ -1,31 +1,14 @@
 # WAD-Lab12-Backend
 
-## Pre-requisites
-Node.js \& NPM
 
-## Do not forget to add the password: "" of your database in database.js
 
-## Clone the repository
-```
-git clone https://github.com/M-Gharib/WAD-Lab12-Backend.git
-```
 
-## Navigate to the project directory
-```
-cd <project name>
-```
-
-## Install dependencies
+## Install dependencies(just for the first time)
 ```
 npm install
 ```
 
 ## Run the project
 ```
-npm start
-```
-
-or 
-```
-npm server.js
+nodemon server
 ```
