@@ -3,7 +3,7 @@
 
 
 
-## Install dependencies(just for the first time)
+## Install dependencies(just for the first time) vb peate runima idk, midagi halba ei tee kui runnite
 ```
 npm install
 ```

@@ -1,6 +1,6 @@
 # WAD-Lab12-Frontend
 
-## Project setup(just for the first time)
+## Project setup (just for the first time) vb peate runima idk, midagi halba ei tee kui runnite
 ```
 npm install
 ```
