@@ -10,7 +10,7 @@
         <div class="item" v-for="post in posts" :key="post.id">
           <!-- / We are putting an anchor for each post, when we click on it, we will be directed to the specific post view (/apost/) /  -->
           <router-link class="singlepost" :to="`/post/${post.id}`">
-            <span class="date">Nov. 22 2025</span>
+            <span class="date">Dec. 15 2025</span>
             <span class="body"><b>Body:</b> {{ post.body }}</span><br />
             </router-link>
         </div>
