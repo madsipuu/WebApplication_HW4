@@ -2,17 +2,15 @@
   <div class="A Post">
     <div id="form">
       <h3>A Post</h3>
-      <label for="title">Title: </label>
-      <input name="type" type="text" id="title" required v-model="post.title" />
       <label for="body">Body: </label>
       <input name="body" type="text" id="body" required v-model="post.body" />
-      <label for="url">Url: </label>
-      <input name="url" type="text" id="url" required v-model="post.urllink" />
+
+      <div class="button-row">
+        <button @click="updatePost" class="updatePost">Update Post</button>
+        <button @click="deletePost" class="deletePost">Delete Post</button>
+      </div>
     </div>
-    <div>
-      <button @click="updatePost" class="updatePost">Update Post</button>
-      <button @click="deletePost" class="deletePost">Delete Post</button>
-    </div>
+
   </div>
 </template>
 
@@ -87,39 +85,46 @@ export default {
 #form {
   max-width: 420px;
   margin: 30px auto;
-  background: rgb(167, 154, 154);
+  background: rgb(177, 204, 130);
   text-align: left;
   padding: 40px;
   border-radius: 10px;
 }
 h3 {
   text-align: center;
-  color: rgb(8, 110, 110);
+  color: rgb(0, 0, 0);
 }
 label {
-  color: rgb(8, 110, 110);
+  color: rgb(0, 0, 0);
   display: inline-block;
-  margin: 25px 0 15px;
+  margin: 10px;
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
 }
 input {
-  display: block;
+  display: inline-block;
   padding: 10px 6px;
-  width: 100%;
+  width: 70%;
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid white;
-  color: blue;
+  color: rgba(40, 40, 40, 0.71);
+  text-align: center;
 }
 button {
-  background: rgb(8, 110, 110);
+  background: rgb(73, 121, 219);
   border: 0;
   padding: 10px 20px;
   margin-top: 20px;
   color: white;
   border-radius: 20px;
+}
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 </style>

@@ -10,9 +10,8 @@
         <div class="item" v-for="post in posts" :key="post.id">
           <!-- / We are putting an anchor for each post, when we click on it, we will be directed to the specific post view (/apost/) /  -->
           <router-link class="singlepost" :to="`/post/${post.id}`">
-            <span class="title"><b>Title:</b> {{ post.title }}</span><br />
+            <span class="date">Nov. 22 2025</span>
             <span class="body"><b>Body:</b> {{ post.body }}</span><br />
-            <span class="url"><b>Url:</b> {{ post.urllink }}</span><br />
             </router-link>
         </div>
         </ul>
@@ -92,12 +91,12 @@ export default {
 </script>
 
 <style scoped>
-body{
-  margin: 20px 40px;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  background: #fafafa;
-  position: relative;
+.body {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.95em;
+  line-height: 1.4;
+  color: #333;
 }
 .post-list{
   background: rgb(189, 212, 199);
@@ -146,7 +145,7 @@ button{
   font-weight: 700;
   font-size: 0.8em;
   display: block;
-  padding: 10px 16px;
+  padding: 10px 15px;
   letter-spacing: 2px;
 }
 nav{
@@ -162,12 +161,11 @@ nav{
     text-align: left;
 }
 .center {
-  margin: auto;
+  margin: 10px auto !important;
+  width: 300px !important;  /* Muutke see number */
+  padding: 20px 50px !important;  /* Muutke need numbrid */
   border: 0;
-  padding: 10px 20px;
   margin-top: 20px;
-  margin: 10px auto;
-  width: 30%; 
 }
 .container {
   display: flex;
@@ -176,6 +174,7 @@ nav{
 
 h1 {
   font-size: 20px;
+  margin-bottom: 20px;
 }
 a {
   text-decoration: none;
@@ -184,10 +183,20 @@ a:hover {
   text-decoration: underline;
 }
 .item {
-  background: rgb(189, 212, 199);
-  margin-bottom: 5px;
-  padding: 3px 5px;
-  border-radius: 10px;
+  background: #e6e6e6;
+  border-radius: 14px;
+  padding: 20px 18px 18px;
+  margin-bottom: 20px;          
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.date {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 0.75em;
+  color: #555;
 }
 #post-list {
   background: #6e8b97;
@@ -195,11 +204,12 @@ a:hover {
   margin-bottom: 30px;
   padding: 10px 20px;
   margin: auto;
-  width: 50%;
+  width: 30%;
   border-radius: 20px;
 }
 #post-list ul {
   padding: 0;
+  margin-bottom: 20px;
 }
 #post-list li {
   display: inline-block;
